@@ -31,7 +31,7 @@ function App() {
   const meteorRefs = useRef([]);
   const [meteorites, setMeteorites] = useState([]);
 
- 
+
   useEffect(() => {
     let timeoutId = null;
 
@@ -75,7 +75,7 @@ function App() {
     }
   }, [loading]);
 
- 
+
   const GalaxyBackground = useCallback(() => {
     return (
       <div className="galaxy-container">
@@ -95,16 +95,16 @@ function App() {
 
   useEffect(() => {
     if (step === 2) {
-     
+
       setConfetti(true);
       // By Gaurav
 
       const playAudio = () => {
         if (audioRef.current) {
-      
+
           const playPromise = audioRef.current.play();
 
-          
+
           if (playPromise !== undefined) {
             playPromise
               .then(() => {
@@ -113,7 +113,7 @@ function App() {
               .catch(error => {
                 console.log("Autoplay prevented:", error);
 
-                
+
                 const audioButton = document.createElement("button");
                 audioButton.innerText = "🎵 Play Music";
                 audioButton.className = "audio-button";
@@ -131,7 +131,7 @@ function App() {
         }
       };
 
-    
+
       playAudio();
 
 
@@ -139,10 +139,10 @@ function App() {
         setShowHearts(true);
       }, 6000);
 
-     
+
       const meteorCount = isMobile ? 6 : 15;
 
-      
+
       const initialMeteorites = Array.from({ length: meteorCount }).map((_, i) => ({
         id: i,
         startX: Math.random() * windowDimensions.width,
@@ -157,12 +157,12 @@ function App() {
 
   useEffect(() => {
     if (step === 2) {
-      const intervalTime = isMobile ? 6000 : 4000; 
+      const intervalTime = isMobile ? 6000 : 4000;
 
       const meteorInterval = setInterval(() => {
         setMeteorites(prevMeteorites => {
           return prevMeteorites.map(meteor => {
-        
+
             const animationProbability = isMobile ? 0.4 : 0.7;
 
             if (Math.random() > animationProbability) {
@@ -209,13 +209,13 @@ function App() {
 
   useEffect(() => {
     if (step === 2 && showHearts) {
-  
+
       const intervalTime = isMobile ? 1000 : 500;
 
       const interval = setInterval(() => {
         heartRefs.current.forEach(heart => {
           if (heart) {
-            
+
             const duration = isMobile ? Math.random() * 7 + 5 : Math.random() * 10 + 5;
             const startX = Math.random() * windowDimensions.width;
 
@@ -253,11 +253,11 @@ function App() {
           >
             <div className="thread"></div>
             <div className="photo-frame" style={{
-       
+
               animation: isMobile
                 ? `swing ${Math.random() * 1 + 4}s ease-in-out alternate infinite`
                 : `swing ${Math.random() * 2 + 3}s ease-in-out alternate infinite`,
-          
+
               width: isMobile ? '120px' : '180px',
               height: isMobile ? '120px' : '180px'
             }}>
@@ -267,7 +267,7 @@ function App() {
                 alt={`Memory ${index + 1}`}
                 width={img.width}
                 height={img.height}
-                loading="lazy" 
+                loading="lazy"
               />
               <div className="photo-border"></div>
             </div>
@@ -286,7 +286,7 @@ function App() {
         preload="auto"
       />
 
-   
+
       {step === 2 && Array.from({ length: isMobile ? 25 : 50 }).map((_, i) => (
         <div
           key={`star-${i}`}
@@ -301,7 +301,7 @@ function App() {
           <div className="simple-meteor meteor-3"></div>
         </>
       )}
-  
+
       {step === 2 && meteorites.map((meteor, i) => (
         <div
           key={`meteor-${meteor.id}`}
@@ -325,10 +325,10 @@ function App() {
         </div>
       ))}
 
-  
+
       <div className="twinkle-overlay"></div>
 
-     
+
       {step === 2 && (
         <div className="moon">
           <div className="moon-crater moon-crater1"></div>
@@ -386,7 +386,7 @@ function App() {
             >
               Loading your surprise... 🎁
             </motion.h2>
-            // By Gaurav
+            {/* // By Gaurav */}
             <motion.div className="loader-container">
               <motion.div
                 className="loader-fill"
@@ -436,7 +436,7 @@ function App() {
               Make a wish when you see a falling star, for this special day is all about you! 💫
             </motion.p>
 
-           
+
             <PhotoGallery />
 
             <motion.div
@@ -448,7 +448,7 @@ function App() {
               Made with ❤️ by Gaurav Negiii
             </motion.div>
 
-           
+
             {showHearts && Array.from({ length: isMobile ? 8 : 15 }).map((_, i) => (
               <div
                 key={i}
@@ -461,14 +461,14 @@ function App() {
           </motion.div>
         )}
       </AnimatePresence>
-      // By Gaurav
+      {/* // By Gaurav */}
       {confetti && (
         <Suspense fallback={null}>
           <Confetti
             width={windowDimensions.width}
             height={windowDimensions.height}
             recycle={step === 2 && !showHearts}
-            numberOfPieces={isMobile ? 300 : 800} 
+            numberOfPieces={isMobile ? 300 : 800}
             gravity={0.12}
             colors={['#ff5e78', '#ffb8c6', '#ffecd2', '#fcd5ce', '#fec89a', '#ffffff', '#d4f1f9']}
             confettiSource={{ x: 0, y: 0, w: windowDimensions.width, h: 0 }}
