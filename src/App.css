@@ -1,4 +1,4 @@
-/* App.css */
+/* // By Gaurav */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap');
 
 * {
@@ -7,6 +7,7 @@
   padding: 0;
 }
 
+/* By Gaurav */
 body {
   margin: 0;
   padding: 0;
@@ -18,7 +19,7 @@ body {
   color: #333;
 }
 
-/* Night mode styling */
+
 .night-mode {
   background: linear-gradient(135deg, #0a0a20, #1b1b3a, #0f1029) !important;
   color: #fff;
@@ -38,6 +39,7 @@ body {
   }
 }
 
+/* By Gaurav */
 .app {
   text-align: center;
   display: flex;
@@ -62,10 +64,10 @@ body {
   max-width: 1200px;
   min-height: 100vh;
   z-index: 5;
-  /* Keep content above the stars */
+
 }
 
-/* Enhanced text effects */
+/* By Gaurav */
 .magical-text {
   font-family: 'Dancing Script', cursive;
   color: #fb4866;
@@ -124,6 +126,7 @@ body {
   }
 }
 
+/* By Gaurav */
 .start-button {
   padding: 15px 35px;
   font-size: 1.2rem;
@@ -183,6 +186,7 @@ body {
   color: #333;
 }
 
+/* By Gaurav */
 .emoji-container {
   font-size: 2.5rem;
   margin: 2rem 0;
@@ -262,6 +266,7 @@ body {
   }
 }
 
+/* By Gaurav */
 .photo-frame img {
   width: 100%;
   height: 100%;
@@ -310,7 +315,7 @@ body {
   color: #fff;
 }
 
-/* Floating hearts with improved animation */
+/* By Gaurav */
 .floating-heart {
   position: fixed;
   font-size: 1.5rem;
@@ -339,7 +344,7 @@ body {
   }
 }
 
-/* Night sky elements */
+/* By Gaurav */
 .star {
   position: absolute;
   background-color: #fff;
@@ -365,7 +370,7 @@ body {
   }
 }
 
-/* Twinkling overlay */
+/* By Gaurav */
 .twinkle-overlay {
   position: fixed;
   top: 0;
@@ -407,6 +412,7 @@ body {
   animation-delay: 0.5s;
 }
 
+/* By Gaurav */
 @keyframes moonrise {
   0% {
     transform: translateY(50px);
@@ -446,7 +452,7 @@ body {
   left: 60px;
 }
 
-/* Meteorite/Shooting Star Effect */
+/* By Gaurav */
 .meteor-container {
   position: fixed;
   z-index: 2;
@@ -537,6 +543,7 @@ body {
   }
 }
 
+/* By Gaurav */
 @media (max-width: 768px) {
   .typewriter {
     font-size: 1.8rem;
@@ -679,9 +686,7 @@ body {
   }
 }
 
-/* Enhanced Galaxy Animation */
-
-/* Galaxy Background Base */
+/* By Gaurav */
 .night-mode::before {
   content: '';
   position: fixed;
@@ -699,7 +704,7 @@ body {
   pointer-events: none;
 }
 
-/* Add this section to your App.js */
+/* By Gaurav */
 .galaxy-container {
   position: fixed;
   top: 0;
@@ -711,7 +716,7 @@ body {
   pointer-events: none;
 }
 
-/* Galaxy Spiral Arms */
+/* By Gaurav */
 .galaxy-arm {
   position: absolute;
   width: 150%;
@@ -748,7 +753,7 @@ body {
     radial-gradient(ellipse at center, transparent 20%, rgba(100, 180, 255, 0.05) 30%, transparent 40%);
 }
 
-/* Galaxy Dust Layers with Parallax Effect */
+/* By Gaurav */
 .galaxy-dust {
   position: absolute;
   width: 200%;
@@ -798,7 +803,7 @@ body {
   animation: galaxyCorePulse 20s ease-in-out infinite alternate;
 }
 
-/* Nebula Clouds */
+/* By Gaurav */
 .nebula {
   position: fixed;
   top: 0;
@@ -816,7 +821,7 @@ body {
   pointer-events: none;
 }
 
-/* Dynamic Star Clusters */
+/* By Gaurav */
 .star-cluster {
   position: absolute;
   width: 100%;
@@ -848,7 +853,7 @@ body {
   animation-delay: 7s;
 }
 
-/* Animations */
+/* By Gaurav */
 @keyframes galaxySpin {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -927,7 +932,8 @@ body {
   }
 }
 
-/* Responsive Adjustments */
+/* By Gaurav */
+
 @media (max-width: 768px) {
 
   .galaxy-arm,
@@ -966,7 +972,7 @@ body {
   }
 }
 
-/* Add this to your App.css file */
+/* By Gaurav */
 
 .audio-button {
   position: absolute;
@@ -1011,15 +1017,18 @@ body {
   background-color: rgba(255, 143, 163, 0.8);
   color: white;
 }
-/* === MOBILE PERFORMANCE OPTIMIZATION === */
-/* Apply these rules specifically for mobile devices */
+
 @media (max-width: 768px) {
-  /* 1. COMPLETELY DISABLE ALL HEAVY ANIMATIONS */
-  .galaxy-arm, .galaxy-dust, .galaxy-core, .nebula, .star-cluster {
+
+  .galaxy-arm,
+  .galaxy-dust,
+  .galaxy-core,
+  .nebula,
+  .star-cluster {
     display: none !important;
   }
-  
-  /* 2. REPLACE GALAXY BACKGROUND WITH STATIC GRADIENT */
+
+
   .night-mode::before {
     content: '';
     position: fixed;
@@ -1032,8 +1041,8 @@ body {
     background-image: none;
     z-index: -2;
   }
-  
-  /* 3. ADD LIGHTWEIGHT STAR BACKGROUND INSTEAD */
+
+  /* By Gaurav */
   .night-mode::after {
     content: '';
     position: fixed;
@@ -1041,7 +1050,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
       radial-gradient(1px 1px at 10% 10%, white, transparent),
       radial-gradient(1px 1px at 20% 20%, white, transparent),
       radial-gradient(1px 1px at 30% 30%, white, transparent),
@@ -1055,14 +1064,13 @@ body {
     z-index: -1;
     opacity: 0.6;
   }
-  
-  /* 4. REPLACE COMPLEX ANIMATIONS WITH CSS SPRITES FOR METEORS */
-  /* Remove original meteor animations */
+
+
   .meteor-container {
     display: none;
   }
-  
-  /* Add simple falling star animation */
+
+
   .simple-meteor {
     position: fixed;
     width: 50px;
@@ -1075,95 +1083,97 @@ body {
     opacity: 0;
     z-index: 2;
   }
-  
-  /* Add 3 simple meteors at different positions */
+
+  /* By Gaurav */
+
   .meteor-1 {
     animation: simpleMeteorFall 3s ease-in 2s infinite;
   }
-  
+
   .meteor-2 {
     top: 15%;
     left: 50%;
     animation: simpleMeteorFall 4s ease-in 5s infinite;
   }
-  
+
   .meteor-3 {
     top: 10%;
     left: 70%;
     animation: simpleMeteorFall 5s ease-in 8s infinite;
   }
-  
+
   @keyframes simpleMeteorFall {
     0% {
       transform: translateY(0) translateX(0) rotate(45deg);
       opacity: 0;
     }
+
     5% {
       opacity: 1;
     }
+
     95% {
       opacity: 1;
     }
+
     100% {
       transform: translateY(300px) translateX(300px) rotate(45deg);
       opacity: 0;
     }
   }
-  
-  /* 5. REDUCE SHADOW DEPTH AND COMPLEXITY */
+
+
   .photo-frame {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
-  
+
   .night-mode .photo-frame {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
-  
+
   .start-button {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
-  
-  /* 6. DISABLE GRADIENT ANIMATIONS IN BODY */
+
+
   body {
     background: #fef9ff;
     animation: none;
   }
-  
+
   .night-mode {
     background: #0a0a20;
   }
-  
-  /* 7. SIMPLIFY TEXT SHADOWS */
+
   .magical-text {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   }
-  
+
   .night-mode .magical-text {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   }
-  
+
   .glow-text {
     text-shadow: none;
   }
-  
-  /* 8. DISABLE MOTION FOR PHOTO FRAMES */
+
   .photo-frame {
     animation: none !important;
     transform: none !important;
   }
-  
-  /* 9. REDUCE NUMBER OF HEARTS */
+
   .floating-heart:nth-child(even) {
     display: none;
   }
-  
-  /* 10. OPTIMIZE CONFETTI IF USED */
-  /* Add to your React code: numberOfPieces={isMobile ? 50 : 500} */
+
 }
 
-/* Add this to your HTML */
+
 @media (max-width: 768px) {
   .galaxy-container {
     display: none;
   }
 }
+
+
+/* By Gaurav */
