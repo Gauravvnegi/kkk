@@ -1011,3 +1011,159 @@ body {
   background-color: rgba(255, 143, 163, 0.8);
   color: white;
 }
+/* === MOBILE PERFORMANCE OPTIMIZATION === */
+/* Apply these rules specifically for mobile devices */
+@media (max-width: 768px) {
+  /* 1. COMPLETELY DISABLE ALL HEAVY ANIMATIONS */
+  .galaxy-arm, .galaxy-dust, .galaxy-core, .nebula, .star-cluster {
+    display: none !important;
+  }
+  
+  /* 2. REPLACE GALAXY BACKGROUND WITH STATIC GRADIENT */
+  .night-mode::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0a0a20, #1b1b3a, #0f1029);
+    animation: none;
+    background-image: none;
+    z-index: -2;
+  }
+  
+  /* 3. ADD LIGHTWEIGHT STAR BACKGROUND INSTEAD */
+  .night-mode::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(1px 1px at 10% 10%, white, transparent),
+      radial-gradient(1px 1px at 20% 20%, white, transparent),
+      radial-gradient(1px 1px at 30% 30%, white, transparent),
+      radial-gradient(1px 1px at 40% 40%, white, transparent),
+      radial-gradient(1px 1px at 50% 50%, white, transparent),
+      radial-gradient(1px 1px at 60% 60%, white, transparent),
+      radial-gradient(1px 1px at 70% 70%, white, transparent),
+      radial-gradient(1px 1px at 80% 80%, white, transparent),
+      radial-gradient(1px 1px at 90% 90%, white, transparent);
+    background-size: 300px 300px;
+    z-index: -1;
+    opacity: 0.6;
+  }
+  
+  /* 4. REPLACE COMPLEX ANIMATIONS WITH CSS SPRITES FOR METEORS */
+  /* Remove original meteor animations */
+  .meteor-container {
+    display: none;
+  }
+  
+  /* Add simple falling star animation */
+  .simple-meteor {
+    position: fixed;
+    width: 50px;
+    height: 1px;
+    background: white;
+    transform: rotate(45deg);
+    top: 20%;
+    left: 20%;
+    box-shadow: 0 0 5px white;
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  /* Add 3 simple meteors at different positions */
+  .meteor-1 {
+    animation: simpleMeteorFall 3s ease-in 2s infinite;
+  }
+  
+  .meteor-2 {
+    top: 15%;
+    left: 50%;
+    animation: simpleMeteorFall 4s ease-in 5s infinite;
+  }
+  
+  .meteor-3 {
+    top: 10%;
+    left: 70%;
+    animation: simpleMeteorFall 5s ease-in 8s infinite;
+  }
+  
+  @keyframes simpleMeteorFall {
+    0% {
+      transform: translateY(0) translateX(0) rotate(45deg);
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    95% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(300px) translateX(300px) rotate(45deg);
+      opacity: 0;
+    }
+  }
+  
+  /* 5. REDUCE SHADOW DEPTH AND COMPLEXITY */
+  .photo-frame {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .night-mode .photo-frame {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .start-button {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 6. DISABLE GRADIENT ANIMATIONS IN BODY */
+  body {
+    background: #fef9ff;
+    animation: none;
+  }
+  
+  .night-mode {
+    background: #0a0a20;
+  }
+  
+  /* 7. SIMPLIFY TEXT SHADOWS */
+  .magical-text {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .night-mode .magical-text {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+  
+  .glow-text {
+    text-shadow: none;
+  }
+  
+  /* 8. DISABLE MOTION FOR PHOTO FRAMES */
+  .photo-frame {
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  /* 9. REDUCE NUMBER OF HEARTS */
+  .floating-heart:nth-child(even) {
+    display: none;
+  }
+  
+  /* 10. OPTIMIZE CONFETTI IF USED */
+  /* Add to your React code: numberOfPieces={isMobile ? 50 : 500} */
+}
+
+/* Add this to your HTML */
+@media (max-width: 768px) {
+  .galaxy-container {
+    display: none;
+  }
+}

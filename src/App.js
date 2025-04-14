@@ -294,7 +294,13 @@ function App() {
           className="star"
         />
       ))}
-
+      {isMobile && (
+        <>
+          <div className="simple-meteor meteor-1"></div>
+          <div className="simple-meteor meteor-2"></div>
+          <div className="simple-meteor meteor-3"></div>
+        </>
+      )}
       {/* Meteorites (Shooting Stars) */}
       {step === 2 && meteorites.map((meteor, i) => (
         <div
