@@ -2,17 +2,22 @@
 import React, { useState, useEffect, useRef, useCallback, lazy, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
-
 const Confetti = lazy(() => import('react-confetti'));
 
 // By Gaurav
 
+// const images = [
+
+//   { src: 'https://picsum.photos/id/1015/250/250', width: 250, height: 250 },
+//   { src: 'https://picsum.photos/id/1016/250/250', width: 250, height: 250 },
+//   { src: 'https://picsum.photos/id/1025/250/250', width: 250, height: 250 },
+//   { src: 'https://picsum.photos/id/1035/250/250', width: 250, height: 250 }
+// ];
 const images = [
-  { src: 'https://picsum.photos/id/1011/250/250', width: 250, height: 250 },
-  { src: 'https://picsum.photos/id/1015/250/250', width: 250, height: 250 },
-  { src: 'https://picsum.photos/id/1016/250/250', width: 250, height: 250 },
-  { src: 'https://picsum.photos/id/1025/250/250', width: 250, height: 250 },
-  { src: 'https://picsum.photos/id/1035/250/250', width: 250, height: 250 }
+  { src: `${process.env.PUBLIC_URL}/images/image1.jpg`, width: 250, height: 250 },
+  { src: `${process.env.PUBLIC_URL}/images/image2.jpg`, width: 250, height: 250 },
+  { src: `${process.env.PUBLIC_URL}/images/image1.jpg`, width: 250, height: 250 },
+  { src: `${process.env.PUBLIC_URL}/images/image2.jpg`, width: 250, height: 250 },
 ];
 
 function App() {
@@ -232,6 +237,7 @@ function App() {
 
 
   const PhotoGallery = useCallback(() => {
+    debugger;
     return (
       <motion.div
         className="gallery"
@@ -262,13 +268,15 @@ function App() {
               height: isMobile ? '120px' : '180px'
             }}>
               <div className="photo-tape"></div>
+
               <img
                 src={img.src}
                 alt={`Memory ${index + 1}`}
                 width={img.width}
                 height={img.height}
-                loading="lazy"
+              // loading="lazy"
               />
+              {/* <img src="http://localhost:3000/images/gaurav.jpg" alt="Test Image" />  */}
               <div className="photo-border"></div>
             </div>
           </motion.div>
@@ -422,7 +430,7 @@ function App() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              ✨ Happy Birthday Komuu! 🎂
+              ✨ Happy Birthday gaurva! 🎂
             </motion.h1>
 
             <motion.p
