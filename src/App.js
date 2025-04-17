@@ -13,13 +13,21 @@ const Confetti = lazy(() => import('react-confetti'));
 //   { src: 'https://picsum.photos/id/1025/250/250', width: 250, height: 250 },
 //   { src: 'https://picsum.photos/id/1035/250/250', width: 250, height: 250 }
 // ];
+// const images = [
+//   { src: `${process.env.PUBLIC_URL}/images/k1.jpg`, width: 250, height: 350 },
+//   { src: `${process.env.PUBLIC_URL}/images/k2.jpg`, width: 250, height: 350 },
+//   { src: `${process.env.PUBLIC_URL}/images/k3.jpg`, width: 250, height: 350 },
+//   { src: `${process.env.PUBLIC_URL}/images/k4.jpg`, width: 250, height: 350 },
+//   { src: `${process.env.PUBLIC_URL}/images/k5.jpg`, width: 250, height: 350 },
+// ];
 const images = [
-  { src: `${process.env.PUBLIC_URL}/images/k1.jpg`, width: 250, height: 250 },
-  { src: `${process.env.PUBLIC_URL}/images/k2.jpg`, width: 250, height: 250 },
-  { src: `${process.env.PUBLIC_URL}/images/k3.jpg`, width: 250, height: 250 },
-  { src: `${process.env.PUBLIC_URL}/images/k4.jpg`, width: 250, height: 250 },
-  { src: `${process.env.PUBLIC_URL}/images/k5.jpg`, width: 250, height: 250 },
+  { src: `${process.env.PUBLIC_URL}/images/k1.jpg`, width: 200, height: 300 },
+  { src: `${process.env.PUBLIC_URL}/images/k2.jpg`, width: 200, height: 300 },
+  { src: `${process.env.PUBLIC_URL}/images/k3.jpg`, width: 200, height: 300 },
+  { src: `${process.env.PUBLIC_URL}/images/k4.jpg`, width: 200, height: 300 },
+  { src: `${process.env.PUBLIC_URL}/images/k5.jpg`, width: 200, height: 300},
 ];
+
 
 function App() {
   const [step, setStep] = useState(0);
@@ -238,7 +246,7 @@ function App() {
 
 
   const PhotoGallery = useCallback(() => {
-    debugger;
+    // debugger;
     return (
       <motion.div
         className="gallery"
@@ -265,8 +273,8 @@ function App() {
                 ? `swing ${Math.random() * 1 + 4}s ease-in-out alternate infinite`
                 : `swing ${Math.random() * 2 + 3}s ease-in-out alternate infinite`,
 
-              width: isMobile ? '120px' : '180px',
-              height: isMobile ? '120px' : '180px'
+                width: isMobile ? '190px' : '220px',
+                height: isMobile ? '250px' : '350px' 
             }}>
               <div className="photo-tape"></div>
 
@@ -362,7 +370,7 @@ function App() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 1 }}
             >
-              Hey Gaurav... Someone special planned this just for you...
+              Hey Komal... Someone special planned this just for you...
             </motion.h1>
             <motion.button
               onClick={() => setStep(1)}
@@ -431,7 +439,7 @@ function App() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              ✨ Happy Birthday gaurva! 🎂
+              ✨ Happy Birthday Komuu ! 🎂
             </motion.h1>
 
             <motion.p
@@ -454,7 +462,7 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.5, duration: 0.7 }}
             >
-              Made with ❤️ by Gaurav Negiii
+              Made with ❤️ by Gaurav 
             </motion.div>
 
 
