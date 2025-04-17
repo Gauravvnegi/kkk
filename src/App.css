@@ -12,7 +12,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(135deg, #fef9ff, #ffe0f0, #ffc8dd);
+  background: linear-gradient(135deg, #eb83ca, #ffe0f0, #ffc8dd);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   overflow-x: hidden;
@@ -316,16 +316,14 @@ body {
 }
 
 /* By Gaurav */
-/* Add this to your CSS */
-/* Add this to your CSS */
-/* Add this to your CSS */
+
 .floating-heart {
   position: fixed;
   font-size: 1.5rem;
   opacity: 0.8;
   z-index: 10;
   pointer-events: none;
-  color: #e91e63; /* Dark pink color */
+  color: #e91e63; 
   filter: brightness(0.85);
 }
 
@@ -336,7 +334,7 @@ body {
   }
   
   100% {
-    bottom: 100vh; /* Rise to top of screen */
+    bottom: 100vh; 
     opacity: 0;
   }
 }
@@ -345,7 +343,7 @@ body {
   .floating-heart {
     font-size: 1.2rem;
     z-index: 100;
-    color: #c2185b; /* Darker pink for mobile */
+    color: #c2185b;
   }
 }
 @keyframes float {

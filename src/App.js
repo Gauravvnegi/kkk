@@ -246,37 +246,35 @@ function App() {
 
   useEffect(() => {
     if (step === 2 && showHearts) {
-      // Create hearts continuously
+
       const heartInterval = setInterval(() => {
-        // Create a new heart
+      
         const newHeart = document.createElement('div');
         newHeart.className = 'floating-heart';
         newHeart.innerHTML = '❤️';
-        
-        // Random position on x-axis
+   
         const startX = Math.random() * windowDimensions.width;
-        
-        // Start from bottom of screen
+   
         newHeart.style.left = `${startX}px`;
-        newHeart.style.bottom = '-20px'; // Start just below the viewport
+        newHeart.style.bottom = '-20px'; 
         
-        // Random duration for rising effect
+    
         const duration = Math.random() * 8 + 5;
         
-        // Apply animation
+    
         newHeart.style.animation = `float ${duration}s linear`;
         
-        // Add heart to DOM
+ 
         document.querySelector('.app').appendChild(newHeart);
         
-        // Remove heart after animation completes
+   
         setTimeout(() => {
           if (newHeart.parentNode) {
             newHeart.parentNode.removeChild(newHeart);
           }
         }, duration * 1000);
         
-      }, isMobile ? 800 : 400); // Create hearts more frequently on desktop
+      }, isMobile ? 800 : 400); 
   
       return () => clearInterval(heartInterval);
     }
