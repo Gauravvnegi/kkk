@@ -14,10 +14,11 @@ const Confetti = lazy(() => import('react-confetti'));
 //   { src: 'https://picsum.photos/id/1035/250/250', width: 250, height: 250 }
 // ];
 const images = [
-  { src: `${process.env.PUBLIC_URL}/images/image1.jpg`, width: 250, height: 250 },
-  { src: `${process.env.PUBLIC_URL}/images/image2.jpg`, width: 250, height: 250 },
-  { src: `${process.env.PUBLIC_URL}/images/image1.jpg`, width: 250, height: 250 },
-  { src: `${process.env.PUBLIC_URL}/images/image2.jpg`, width: 250, height: 250 },
+  { src: `${process.env.PUBLIC_URL}/images/k1.jpg`, width: 250, height: 250 },
+  { src: `${process.env.PUBLIC_URL}/images/k2.jpg`, width: 250, height: 250 },
+  { src: `${process.env.PUBLIC_URL}/images/k3.jpg`, width: 250, height: 250 },
+  { src: `${process.env.PUBLIC_URL}/images/k4.jpg`, width: 250, height: 250 },
+  { src: `${process.env.PUBLIC_URL}/images/k5.jpg`, width: 250, height: 250 },
 ];
 
 function App() {
