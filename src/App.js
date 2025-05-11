@@ -51,7 +51,7 @@ function App() {
 
     const handleResize = () => {
       clearTimeout(timeoutId);
-
+      //setting timeout
       timeoutId = setTimeout(() => {
         setWindowDimensions({
           width: window.innerWidth,
