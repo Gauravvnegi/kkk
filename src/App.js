@@ -26,6 +26,7 @@ const images = [
   { src: `${process.env.PUBLIC_URL}/images/k3.jpg`, width: 200, height: 300 },
   { src: `${process.env.PUBLIC_URL}/images/k4.jpg`, width: 200, height: 300 },
   { src: `${process.env.PUBLIC_URL}/images/k5.jpg`, width: 200, height: 300},
+  { src: `${process.env.PUBLIC_URL}/images/k6.jpg`, width: 200, height: 300},
 ];
 
 
